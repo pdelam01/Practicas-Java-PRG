@@ -1,0 +1,50 @@
+Practica P-VAR
+
+Alumno: Pablo de la Hera Martínez
+
+Horas dedicadas: 15h
+
+Problemas surgidos al realizar la practica: alguno que otro, pero facilmente solucionables.
+
+Respuestas a las preguntas: 
+1) Ejercicio 4 (030101, 04):
+	Al poner el tipo de dato "double", observamos que al realizar la operación 2.9-1.8 nos va a proporcionar un resultado con un gran 		número de decimales (1.2999...998). Si pusiesemos "float" en su lugar, el resultado de la operación sería mucho más aproximado 	(1.30)
+ 
+
+2) Ejercicio 5 (030101, 04):
+	Declarando a partir del constructor "new" el tipo "BigDecimal", conseguimos que el resultado de la operación anterior lo redondee al 		decimal más grande. Actúa como el "float", redondeando al 1.3 el resultado (de forma práctica he comprobado en el ejercicio anterior 		que, sustituyendo el double por el float, el resultado se redondea a 1.3, igual que con BigDecimal)
+
+
+3) Ejercicio 4 (030104, 04):
+	a)-Gigante: Infinity: se imprime esto en pantalla debido a que el resultado de la potencia introducida excede la capacidad del float 	   	   (que es para variables decimales pequeñas). Señalar que la 'e' quiere decir x10^ (1.766 por 10 elevado a 289)
+	  -Normal: realiza una conversión de double a float, con la consiguiente pérdida de decimales del resultado respecto al valor 		   introducido. 
+	  -Mínimo: se imprime el resultado '0.0' debido a que se está calculando un número decimal seguido de tantos 0 a la derecha de la coma 		   que, en vez de imprimirlos todos, se muestra directamente en pantalla el resultado 0.0
+		*Nótese que con el double nos permite poner exponentes muy grandes (1.766x10^289) de tal manera que al compilar no nos        			detecta problemas. Al transformar el double a un float, este no soporta tal cantidad de dígitos e imprime por pantalla un 			"Infinity" o "0.0".
+
+	b)En pantalla aparece el límite inferior de capacidad del dato introducido (byte 128), cambiado de signo (-) y restado las unidades 		que nos hemos excecido con el valor introducido (130) respecto al limite de capacidad del dato: (-126, esto es: 130-128=2 unidades 		excedidas => 128-2=126 resultado final).
+	Esto es idéntico en los otros dos tipos de datos:
+
+		-Short: -32768(lim inferior), 32770(valor introducido), -32766(valor mostrado): 32770-32768=2 => 32768-2= 32766
+		-Int: -2147483648(lim inferior), 2147483650(valor introducido), -2147483646(valor mostrado): 2147483648-2= 2147483646
+
+	c)Sucede algo similar a lo explicado en el apartado 'a) Mínimo': se realiza la operación 1.3E22 (1.3x10^22) que resulta un número tan 		grande con tantos ceros a la derecha que directamente no los imprime todos por pantalla, si no que te deja el resultado tal cuál 		introduciste el valor de la variable (1.3E22 en potencias de 10)
+	
+
+4) Ejercicio 10 (030201,10):
+	La función 'compareTo' nos imprime dos resultados al comparar dos cadenas de caracteres:
+		-Número negativo: la primera cadena es mayor que la segunda lexicográficamente hablando.
+		-Número positivo: la primera cadena es menor lexicográficamente que la segunda.
+		-0: ambas cadenas son iguales.
+	El resultado mostrado al comparar la cadena "Viaje al Parnaso" y "Viaje al Olimpo" es '1', por lo que la cadena "Viaje al Olimpo" es 		mayor que la primera cadena "Viaje al Parnaso".
+
+
+5) Ejercicio 1 (030202, 01):
+	Diferencia entre método 'capacity' y 'lenght': el primero marca la cantidad de caracteres que se pueden llegar a escribir en un   		StringBuffer, mientras que el segundo calcula el total de caracteres que se han escrito.
+
+
+6) Ejercicio 1 (030203, 01 Alumno):
+	En un primer lugar, al compilar y ejecutar el programa desde el apartado 030203 sin hacer modificaciones, nos muestra una serie de 		datos. La última linea nos redirecciona al fichero donde están almacenados los datos del alumno (es.unileon.prg.tema5.Alumno@4bff64c2)
+	que todavia no están habilitados, lo que hace que no nos devuelva ningún tipo de información o dato (solo la rama de ficheros en donde 		están almacenados los datos de este). Tras eliminarlo de comentarios y así habilitarlo, nos imprime en pantalla los datos que 		buscabamos, almacenados en el fichero Alumno.java (NIU: 1000011111 Nombre: Pepe Nota: 6.0)
+	
+	 
+	

@@ -1,0 +1,85 @@
+Practica P-ARR
+
+Alumno: Pablo de la Hera Martínez
+
+Horas dedicadas: 9,30h
+
+Problemas surgidos al realizar la practica: pequenyos problemas que se solucionaron sin más complicaciones (fundamentalmente al inicio de la practica).
+
+Respuestas a la preguntas:
+
+Ejercicio 2, apartado 030102:
+	A la hora de compilar el ejercicio, nos imprimía por pantalla una lista tal que: { 1, 2, 3, 4, 5, 6, 7, 8, 9, ... +32 more. Bien, este fallo era debido a que no igualabamos en primer lugar la "i" a 0 (estaba igualada a 1), así como que escribíamos: i <= arrayEnteros.length, lo que hacia que nos saltase un error del tipo: "java.lang.reflect.InvocationTargetException"
+	La solución a este fallo pasaba por corregir en bucle for de la siguiente manera: "for(int i=0 ; i < arrayEnteros.length ; i++)", de tal manera que compilaba correctamente e imprimia en pantalla el ultimo "}" que no se alcanzaba a leer e imprimir de la otra forma.
+
+Ejercicio 1, apartado 030202:
+Por pantalla vamos a obtener lo siguiente:
+	<copiarOpcion1> - inicio
+     [java] 
+     [java] [Pedro , 913779900]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <copiarOpcion1> - tras realizar la modificacion 
+     [java] 
+     [java] [Luis , 610010101]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <copiarOpcion1> - fin
+
+	El vector "copia" apunta al vector "personas", por lo que ambos son identicos. Luego se modifica Pedro por Luis y se imprime por pantalla Luis, pero Juan no se cambia, por lo que "copia" sigue apuntando a este y lo imprime. Tanto "copia" como "personas" apuntan a los mismo.
+
+Ejercicio 2, apartado 030202:
+Por pantalla vamos a obtener lo siguiente:
+	<copiarOpcion2> - inicio
+     [java] 
+     [java] [Pedro , 913779900]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <copiarOpcion2> - tras realizar la modificacion 
+     [java] 
+     [java] [Pedro , 913779900]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <copiarOpcion2> - fin
+
+     En este caso, no igualamos "copia" a "personas", por lo que cualquier modificación que hagamos en "copia" no se ve reflejada en "personas".
+     Es por ello que, a pesar de en "copia" introducir Luis, este no se modifica por Pedro y no se imprime.
+	
+Ejercicio 3: apartado 030202:
+Por pantalla vamos a obtener lo siguiente:
+	<pasarParametros> - inicio
+     [java] 
+     [java] [Pedro , 913779900]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <recibirParametros> - inicio
+     [java] 
+     [java] [Pedro , 913779900]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <recibirParametros> - tras realizar la modificacion 
+     [java] 
+     [java] [Luis , 610010101]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <recibirParametros> - fin
+     [java] 
+     [java] [Luis , 610010101]
+     [java] [Juan , 915453322]
+     [java] 
+     [java] <pasarParametros> - fin
+
+	En el tercer ejercicio, creamos "listadepersonas" que va apuntar a "personas", por lo que se imprime de nuevo Pedro y Juan (y luego una segunda vez ya que imprimimos en este caso lo que hay en el vector "listadepersonas"). Luego moficamos el vector "personas", imprimimos y de nuevo se repite el proceso con "listadepersonas" (se modifica e imprime lo mismo que "personas").
+
+Ejercicio 4: apartado 030202:
+Por pantalla vamos a obtener lo siguiente:
+	 <pasarParametrosErroneo> - inicio
+     [java] 
+     [java] 
+     [java] <recibirParametros> - inicio
+     [java] 
+     [java] 
+     [java] java.lang.reflect.InvocationTargetException
+     ...+32 more
+
+	En este ejercicio, se pasa en un primer momento un parametro vacio (null). Además, no hemos llamado al contructor que nos crea el objeto.

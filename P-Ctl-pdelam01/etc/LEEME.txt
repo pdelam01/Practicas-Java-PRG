@@ -1,0 +1,45 @@
+Practica P-CTL
+
+Alumno: Pablo de la Hera Martínez
+
+Horas dedicadas: 17h
+
+Problemas surgidos al realizar la practica:
+	Varios problemas, fundementalmente en aquellos en los que se pedía modificar las clases NumeroEntero, Rectangulo, Jugador... y demás, 		debido a que en el inicio no sabia bien diferenciar las variables que estaban en el ejercicio con respecto a las de en la clase, así 		como que me costaba llamar a los métodos desde los ejercicios. No obstante en crear la clase EcuacionSegundoGrado no encontré tanta 		dificultad como en los otros.
+
+   *Ejercicios incompletos: 
+	-01 de 030203 Los resultados no son los correctos.
+	-03 de 030203 La parte del cuadrado vacío, me daba varios problemas (en un primer lugar solo me imprimía una 'L' con los ateríscos, 		otras me imprimia el cuadrado relleno... Finalmente probé con el StringBuffer, pero la linea de asteriscos de la derecha está movida 		(aunque se diferencie bien el cuadrado y el espacio vacio en su interior).
+	-10 de 030201 La tabla de conversión no se imprime de la forma que debería.
+
+
+
+Respuestas a la preguntas:
+
+1.- Ejercicio 4 (030101, 04):
+	Se imprime en pantalla el resultado 'Resultado 2' debido a que se cumplen las condiciones del 'if' "((!a || b) || !(n1>n2))"	
+
+2.- Ejercicio 9 (030101, 09): 
+	Con (==) se están comparando direcciones de memoria, valido exclusivamente para datos primitivos, pero no para objetos.
+
+3.- Ejercicio 10 (030101, 10):
+	-En un primer lugar, nos imprime en pantalla:
+		"N1 y N2 son distintos"
+     		"N1 y AUX son iguales"
+	Nos imprime en pantalla que los números n1 y n2 son distintos, pues estamos comparando las direcciones de memoria donde estos 		estan guardados, las cuales son distintas (no compara el valor '10' de los números, no compara los objetos n1 y n2).
+	
+	-En un segundo lugar:
+		"N1 y N2 son iguales"
+     		"N1 y AUX son iguales"
+     		"N2 y AUX son iguales"
+	En pantalla ahora, nos dice que n1 y n2 son iguales, pues al crear en NumeroEntero.java "return _valor == n._valor;", estamos 		comparando el valor de n1 y n2 (10) y no la dirección de memoria en la que estos están guardados.
+	Así, comparamos el obejeto _valor con el otro objeto n._valor.
+
+4.- Ejercicio 3 (030102, 03):
+	De forma idéntica a ejercicios anteriores, al comparar los 		objetos n1 y n2 nos va a dar errores pues no estamos comparando los valores reales de dichos números, que se encuentran en la clase NumeroEntero. Para obtener correctamente la comparación, hemos de llamarlos en la clase NumerosEnteros y compararlos tal que así: (n1.compareTo(n2)). 
+	
+	
+
+	
+		
+	
